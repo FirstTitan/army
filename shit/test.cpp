@@ -70,8 +70,3 @@ TEST_CASE( "Test for State class" ) {
         REQUIRE( state->getHitPoints() == 150 );
     }
 }
-
-TEST_CASE( "Test for Ability class!") {
-    //is not rational
-    // Ability *ab = new Ability();
-}
