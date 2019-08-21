@@ -1,4 +1,4 @@
-#include "State.hpp"
+#include "State.h"
 
 State::State(const char* title, int hitPoints, int damage) {
     this->title = title;
@@ -6,7 +6,8 @@ State::State(const char* title, int hitPoints, int damage) {
     this->hitPointsLimit = hitPoints;
     this->damage = damage;
 }
-State::~State() {};
+
+State::~State() {}
 
 void State::ensureIsAlive() {
     if ( this->hitPoints == 0 ) {
@@ -17,12 +18,15 @@ void State::ensureIsAlive() {
 const char* State::getTitle() const {
     return this->title;
 }
+
 int State::getHitPoints() const {
     return this->hitPoints;
 }
+
 int State::getHitPointsLimit() const {
     return this->hitPointsLimit;
 }
+
 int State::getDamage() const {
     return this->damage;
 }
