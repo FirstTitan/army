@@ -7,3 +7,4 @@
 #include "state/MagicState.hpp"
 #include "unit/Unit.hpp"
 #include "unit/Soldier.hpp"
+#include "unit/Rogue.hpp"
