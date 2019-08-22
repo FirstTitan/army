@@ -4,14 +4,14 @@ Ability::Ability(Unit *owner) : owner(owner) {};
 Ability::~Ability() {};
 
 void Ability::attack(Unit* enemy) {
-    this->owner->isAlive();
+    this->owner->ensureIsAlive();
 
-    this->enemy->takeDamage(this->owner->getDamage());
-    this->enemy->counterAttack(this->owner);
+    enemy->takeDamage(this->owner->getDamage());
+    enemy->counterAttack(this->owner);
 }
 
 void Ability::counterAttack(Unit* enemy) {
-    this->owner->isAlive();
+    this->owner->ensureIsAlive();
 
-    this->enemy->takeDamage(this->owner->getDamage()/2);
+    enemy->takeDamage(this->owner->getDamage()/2);
 }
