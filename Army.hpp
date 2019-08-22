@@ -1,4 +1,3 @@
-#include "unit/Unit.hpp"
 #include "spellcaster/SpellCaster.hpp"//**************without unit tests
 #include "spell/Spell.hpp"//**************without unit tests
 #include "ability/Ability.hpp"
@@ -6,3 +5,5 @@
 #include "ability/DefaultAbility.hpp"//************without unit tests
 #include "state/State.hpp"
 #include "state/MagicState.hpp"
+#include "unit/Unit.hpp"
+#include "unit/Soldier.hpp"
