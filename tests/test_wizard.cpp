@@ -32,7 +32,7 @@ TEST_CASE( "Tests for Wizard class" ) {
 
     wizard->changeSpell(new Heal(30, 30));
     wizard->cast(enemy);
-    REQUIRE( enemy->getHitPoints() == 140 );
+    REQUIRE( enemy->getHitPoints() == 125 );
     REQUIRE( wizard->getHitPoints() == 90 );
     REQUIRE( wizard->getMana() == 90 );
 

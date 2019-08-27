@@ -1,5 +1,8 @@
+test_healer:
+	g++ test_healer.cpp ../spellcaster/Healer.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/HealerAbility.cpp ../spellcaster/SpellCaster.cpp ../unit/Soldier.cpp -o start
+	./start
 test_wizard:
-	g++ test_wizard.cpp ../spellcaster/Wizard.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../spellcaster/SpellCaster.cpp ../unit/Soldier.cpp -o start
+	g++ test_wizard.cpp ../spellcaster/Wizard.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/WizardAbility.cpp ../spellcaster/SpellCaster.cpp ../unit/Soldier.cpp -o start
 	./start
 test_werewolf:
 	g++ test_werewolf.cpp ../unit/Werewolf.cpp ../unit/Unit.cpp ../state/State.cpp ../state/WerewolfState.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../unit/Soldier.cpp -o start

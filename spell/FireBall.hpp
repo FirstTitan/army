@@ -8,7 +8,7 @@ class FireBall : public Spell {
         FireBall(int actionPoints, int cost);
         virtual ~FireBall();
 
-        virtual void action(Unit* target);
+        virtual void action(Unit* target, float spellPower);
 };
 
 #endif //FIRE_BALL_HPP

@@ -3,7 +3,6 @@
 SpellCaster::SpellCaster(const char* title, int hitPoints, int damage, int mana)
     : Unit(title, hitPoints, damage), magicState(new MagicState(mana)) {
         this->ability = new DefaultAbility(this);
-        //I think it's error!!!**************************************************
 
 }
 SpellCaster::~SpellCaster() {

@@ -1,8 +1,11 @@
 #include "FireBall.hpp"
 
-FireBall::FireBall(int actionPoints, int cost) : Spell(actionPoints, cost) {};
+FireBall::FireBall(int actionPoints, int cost) : Spell(actionPoints, cost) {
+    this->combat = true;
+}
+
 FireBall::~FireBall() {};
 
-void FireBall::action(Unit* target) {
-    target->takeMagicDamage(this->getActionPoints());
+void FireBall::action(Unit* target, float spellPower) {
+    target->takeMagicDamage(this->getActionPoints()*spellPower);
 }

@@ -8,7 +8,7 @@ class Heal : public Spell {
         Heal(int actionPoints, int cost);
         virtual ~Heal();
 
-        virtual void action(Unit* target);
+        virtual void action(Unit* target, float spellPower);
 };
 
 #endif //HEAL_HPP
