@@ -1,5 +1,8 @@
 #include "spellcaster/SpellCaster.hpp"
+#include "spellcaster/Wizard.hpp"
 #include "spell/Spell.hpp"
+#include "spell/Heal.hpp"
+#include "spell/FireBall.hpp"
 #include "ability/Ability.hpp"
 #include "ability/MagicAbility.hpp"
 #include "ability/DefaultAbility.hpp"
