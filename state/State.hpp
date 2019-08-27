@@ -27,7 +27,7 @@ class State {
 
         void addHitPoints(int hp);
         void takeDamage(int dmg);
-        void takeMagicDamage(int dmg);
+        virtual void takeMagicDamage(int dmg);
 };
 
 #endif //STATE_HPP
