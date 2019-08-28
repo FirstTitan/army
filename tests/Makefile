@@ -1,3 +1,6 @@
+test_priest:
+	g++ test_priest.cpp ../spellcaster/Priest.cpp ../spellcaster/SpellCaster.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/PriestAbility.cpp ../unit/Soldier.cpp ../unit/Vampire.cpp ../ability/VampireAbility.cpp -o start
+	./start
 test_healer:
 	g++ test_healer.cpp ../spellcaster/Healer.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/HealerAbility.cpp ../spellcaster/SpellCaster.cpp ../unit/Soldier.cpp -o start
 	./start
