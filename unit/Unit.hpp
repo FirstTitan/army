@@ -10,12 +10,15 @@ class Unit {
     protected:
         State* state;
         Ability* ability;
+        bool undead;
 
     public:
         Unit(const char* title, int hitPoints, int damage);
         virtual ~Unit();
 
         void ensureIsAlive();
+
+        bool isUndead() const;
 
         const char* getTitle() const;
         int getHitPoints() const;

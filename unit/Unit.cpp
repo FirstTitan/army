@@ -1,7 +1,9 @@
 #include "Unit.hpp"
 
 Unit::Unit(const char* title, int hitPoints, int damage)
-    : state(new State(title, hitPoints, damage)) {};
+    : state(new State(title, hitPoints, damage)) {
+        this->undead = false;
+}
     
 Unit::~Unit() {
     delete(this->state);
@@ -10,6 +12,10 @@ Unit::~Unit() {
 
 void Unit::ensureIsAlive() {
     this->state->ensureIsAlive();
+}
+
+bool Unit::isUndead() const {
+    return this->undead;
 }
 
 const char* Unit::getTitle() const {
