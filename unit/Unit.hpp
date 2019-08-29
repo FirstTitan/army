@@ -3,10 +3,11 @@
 
 #include "../state/State.hpp"
 #include "../ability/Ability.hpp"
+#include "../interface/Observable.hpp"
 
 class Ability;
 
-class Unit {
+class Unit : public Observable {
     protected:
         State* state;
         Ability* ability;

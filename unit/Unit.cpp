@@ -36,9 +36,17 @@ void Unit::addHitPoints(int hp) {
 }
 void Unit::takeDamage(int dmg) {
     this->state->takeDamage(dmg);
+
+    if ( this->state->getHitPoints() == 0 ) {
+        this->notify();
+    }
 }
 void Unit::takeMagicDamage(int dmg) {
     this->state->takeMagicDamage(dmg);
+
+    if ( this->state->getHitPoints() == 0 ) {
+        this->notify();
+    }
 }
 
 void Unit::attack(Unit* enemy) {
