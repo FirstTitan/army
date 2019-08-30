@@ -16,6 +16,7 @@ class State {
 
     public:
         State(const char *title, int hitPoints, int damage);
+        State(const char *title, int hitPointsLimit, int hitPoints, int damage);
         virtual ~State();
 
         void ensureIsAlive();

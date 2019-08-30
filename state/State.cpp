@@ -6,6 +6,14 @@ State::State(const char* title, int hitPoints, int damage) {
     this->hitPointsLimit = hitPoints;
     this->damage = damage;
 }
+
+State::State(const char* title, int hitPointsLimit, int hitPoints, int damage) {
+    this->title = title;
+    this->hitPoints = hitPoints;
+    this->hitPointsLimit = hitPointsLimit;
+    this->damage = damage;
+}
+
 State::~State() {};
 
 void State::ensureIsAlive() {

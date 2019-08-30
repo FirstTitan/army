@@ -12,6 +12,8 @@ class Unit : public Observable {
         State* state;
         Ability* ability;
         bool undead;
+        bool vampire;
+        bool werewolf;
 
     public:
         Unit(const char* title, int hitPoints, int damage);
@@ -20,6 +22,12 @@ class Unit : public Observable {
         void ensureIsAlive();
 
         bool isUndead() const;
+        bool isVampire() const;
+        bool isWerewolf() const;
+
+        void setUndead(Unit* unit, bool flag);
+        void setVampire(Unit* unit, bool flag);
+        void setWerewolf(Unit* unit, bool flag);
 
         const char* getTitle() const;
         int getHitPoints() const;

@@ -3,6 +3,8 @@
 
 #include "../unit/Werewolf.hpp"
 #include "../unit/Soldier.hpp"
+#include "../spellcaster/Necromancer.hpp"
+#include "../unit/Vampire.hpp"
 
 TEST_CASE( "Tests for Werewolf class" ) {
     Werewolf* werewolf = new Werewolf("Werewolf", 200, 20);
@@ -32,7 +34,7 @@ TEST_CASE( "Tests for Werewolf class" ) {
     SECTION( "Werewolf::takeDamage for wolf tests" ) {
         werewolf->turnWolf();
 
-        REQUIRE( werewolf->getTitle() == "Werewolf" );
+        REQUIRE( (std::string)werewolf->getTitle() == "Hulk" );
         REQUIRE( werewolf->getHitPoints() == 400 );
         REQUIRE( werewolf->getHitPointsLimit() == 400 );
         REQUIRE( werewolf->getDamage() == 40 );
@@ -190,10 +192,74 @@ TEST_CASE( "Tests for Werewolf class" ) {
     }
 
     SECTION( "Werewolf::turnBack test" ) {
+        Soldier* soldier = new Soldier("Soldier", 200, 20);
+
+        REQUIRE( soldier->getTitle() == "Soldier" );
+        REQUIRE( soldier->getHitPoints() == 200 );
+        REQUIRE( soldier->getHitPointsLimit() == 200 );
+        REQUIRE( soldier->getDamage() == 20 );
+
+        REQUIRE( werewolf->getTitle() == "Werewolf" );
+        REQUIRE( werewolf->getHitPoints() == 200 );
+        REQUIRE( werewolf->getHitPointsLimit() == 200 );
+        REQUIRE( werewolf->getDamage() == 20 );
+
         werewolf->turnWolf();
+
+        REQUIRE( (std::string)werewolf->getTitle() == "Hulk" );
         REQUIRE( werewolf->getHitPoints() == 400 );
+        REQUIRE( werewolf->getHitPointsLimit() == 400 );
+        REQUIRE( werewolf->getDamage() == 40 );
+
+        soldier->attack(werewolf);
+        REQUIRE( soldier->getHitPoints() == 180 );
+        REQUIRE( werewolf->getHitPoints() == 380 );
 
         werewolf->turnBack();
-        REQUIRE( werewolf->getHitPoints() == 200 );
+
+        REQUIRE( werewolf->getTitle() == "Werewolf" );
+        REQUIRE( werewolf->getHitPoints() == 190 );
+        REQUIRE( werewolf->getHitPointsLimit() == 200 );
+        REQUIRE( werewolf->getDamage() == 20 );
+    }
+
+    SECTION( "Werewolf::turnToWerewolf tests" ) {
+        Necromancer* nec = new Necromancer("Necromancer", 150, 12, 150);
+
+        REQUIRE( nec->getTitle() == "Necromancer" );
+        REQUIRE( nec->getHitPoints() == 150 );
+        REQUIRE( nec->getHitPointsLimit() == 150 );
+        REQUIRE( nec->getDamage() == 12 );
+        REQUIRE( nec->getMana() == 150 );
+        REQUIRE( nec->getManaLimit() == 150 );
+        REQUIRE( nec->isWerewolf() == false );
+        REQUIRE( nec->isUndead() == true );
+
+        werewolf->turnToWerewolf(nec);
+
+        REQUIRE( (std::string)nec->getTitle() == "Werewolf" );
+        REQUIRE( nec->getHitPoints() == 200 );
+        REQUIRE( nec->getHitPointsLimit() == 200 );
+        REQUIRE( nec->getDamage() == 20 );
+        REQUIRE( nec->isWerewolf() == true );
+        REQUIRE( nec->isUndead() == false );
+
+        Vampire* vampire = new Vampire("Vampire", 200, 40 );
+
+        REQUIRE( vampire->getTitle() == "Vampire" );
+        REQUIRE( vampire->getHitPoints() == 200 );
+        REQUIRE( vampire->getHitPointsLimit() == 200 );
+        REQUIRE( vampire->getDamage() == 40 );
+        REQUIRE( vampire->isWerewolf() == false );
+        REQUIRE( vampire->isUndead() == true );
+
+        werewolf->turnToWerewolf(vampire);
+
+        REQUIRE( vampire->getTitle() == "Vampire" );
+        REQUIRE( vampire->getHitPoints() == 200 );
+        REQUIRE( vampire->getHitPointsLimit() == 200 );
+        REQUIRE( vampire->getDamage() == 40 );
+        REQUIRE( vampire->isWerewolf() == false );
+        REQUIRE( vampire->isUndead() == true );
     }
 }

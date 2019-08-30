@@ -17,6 +17,8 @@ class Werewolf : public Unit {
 
         void turnWolf();
         void turnBack();
+
+        void turnToWerewolf(Unit* unit);
 };
 
 #endif //WEREWOLF_HPP

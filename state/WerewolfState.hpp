@@ -5,7 +5,7 @@
 
 class WerewolfState : public State {
     public:
-        WerewolfState(const char* title, int hitPoints, int damage);
+        WerewolfState(const char* title, int hitPointsLimit, int hitPoints, int damage);
         virtual ~WerewolfState();
 
         virtual void takeMagicDamage(int dmg);

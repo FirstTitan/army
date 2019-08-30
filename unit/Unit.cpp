@@ -3,6 +3,8 @@
 Unit::Unit(const char* title, int hitPoints, int damage)
     : state(new State(title, hitPoints, damage)) {
         this->undead = false;
+        this->vampire = false;
+        this->werewolf = false;
 }
     
 Unit::~Unit() {
@@ -16,6 +18,22 @@ void Unit::ensureIsAlive() {
 
 bool Unit::isUndead() const {
     return this->undead;
+}
+bool Unit::isVampire() const {
+    return this->vampire;
+}
+bool Unit::isWerewolf() const {
+    return this->werewolf;
+}
+
+void Unit::setUndead(Unit* unit, bool flag) {
+    unit->undead = flag;
+}
+void Unit::setVampire(Unit* unit, bool flag) {
+    unit->vampire = flag;
+}
+void Unit::setWerewolf(Unit* unit, bool flag) {
+    unit->werewolf = flag;
 }
 
 const char* Unit::getTitle() const {

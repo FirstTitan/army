@@ -1,7 +1,7 @@
 #include "WerewolfState.hpp"
 
-WerewolfState::WerewolfState(const char* title, int hitPoints, int damage)
-    : State(title, hitPoints*2, damage*2) {};
+WerewolfState::WerewolfState(const char* title, int hitPointsLimit, int hitPoints, int damage)
+    : State(title, hitPointsLimit*2, hitPoints*2, damage*2) {};
 
 WerewolfState::~WerewolfState() {};
 

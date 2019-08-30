@@ -3,6 +3,7 @@
 
 #include "../unit/Vampire.hpp"
 #include "../unit/Soldier.hpp"
+#include "../unit/Werewolf.hpp"
 
 TEST_CASE( "Tests for Vampire class" ) {
     Vampire* vampire = new Vampire("Vampire", 200, 40);
@@ -148,5 +149,43 @@ TEST_CASE( "Tests for Vampire class" ) {
             REQUIRE( vampire->getHitPoints() == 140 );
             REQUIRE( enemy->getHitPoints() == 0 );
         }
+    }
+
+    SECTION( "Vampire::turnToVampire tests" ) {
+        Soldier* soldier = new Soldier("Soldier", 150, 20);
+
+        REQUIRE( soldier->getTitle() == "Soldier" );
+        REQUIRE( soldier->getHitPoints() == 150 );
+        REQUIRE( soldier->getHitPointsLimit() == 150 );
+        REQUIRE( soldier->getDamage() == 20 );
+        REQUIRE( soldier->isVampire() == false );
+        REQUIRE( soldier->isUndead() == false );
+
+        vampire->turnToVampire(soldier);
+
+        REQUIRE( (std::string)soldier->getTitle() == "Vampire" );
+        REQUIRE( soldier->getHitPoints() == 200 );
+        REQUIRE( soldier->getHitPointsLimit() == 200 );
+        REQUIRE( soldier->getDamage() == 30 );
+        REQUIRE( soldier->isVampire() == true );
+        REQUIRE( soldier->isUndead() == true );
+
+        Werewolf* werewolf = new Werewolf("Werewolf", 190, 25);
+
+        REQUIRE( werewolf->getTitle() == "Werewolf" );
+        REQUIRE( werewolf->getHitPoints() == 190 );
+        REQUIRE( werewolf->getHitPointsLimit() == 190 );
+        REQUIRE( werewolf->getDamage() == 25 );
+        REQUIRE( werewolf->isVampire() == false );
+        REQUIRE( werewolf->isUndead() == false );
+
+        vampire->turnToVampire(werewolf);
+
+        REQUIRE( werewolf->getTitle() == "Werewolf" );
+        REQUIRE( werewolf->getHitPoints() == 190 );
+        REQUIRE( werewolf->getHitPointsLimit() == 190 );
+        REQUIRE( werewolf->getDamage() == 25 );
+        REQUIRE( werewolf->isVampire() == false );
+        REQUIRE( werewolf->isUndead() == false );
     }
 }
