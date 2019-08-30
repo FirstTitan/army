@@ -3,6 +3,7 @@
 
 #include "../spell/Spell.hpp"
 #include "../spellcaster/SpellCaster.hpp"
+#include "../spell/SpellBook.hpp"
 
 class SpellCaster;
 
@@ -12,10 +13,10 @@ class MagicAbility {
         Spell* spell;
 
     public:
-        MagicAbility(SpellCaster* owner, Spell* spell);
+        MagicAbility(SpellCaster* owner, Spells spell);
         virtual ~MagicAbility();
 
-        void changeSpell(Spell* newSpell);
+        void changeSpell(Spells newSpell);
         virtual void cast(Unit* enemy);
 };
 

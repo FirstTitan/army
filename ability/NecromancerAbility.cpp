@@ -1,6 +1,6 @@
 #include "NecromancerAbility.hpp"
 
-NecromancerAbility::NecromancerAbility(SpellCaster* owner, Spell* spell)
+NecromancerAbility::NecromancerAbility(SpellCaster* owner, Spells spell)
     : MagicAbility(owner, spell) {};
 
 NecromancerAbility::~NecromancerAbility() {};

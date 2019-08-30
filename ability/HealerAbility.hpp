@@ -5,7 +5,7 @@
 
 class HealerAbility : public MagicAbility {
     public:
-        HealerAbility(SpellCaster* owner, Spell* spell);
+        HealerAbility(SpellCaster* owner, Spells spell);
         virtual ~HealerAbility();
 
         virtual void cast(Unit* enemy);

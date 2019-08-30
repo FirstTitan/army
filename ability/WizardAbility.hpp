@@ -5,7 +5,7 @@
 
 class WizardAbility : public MagicAbility {
     public:
-        WizardAbility(SpellCaster* owner, Spell* spell);
+        WizardAbility(SpellCaster* owner, Spells spell);
         virtual ~WizardAbility();
 
         virtual void cast(Unit* enemy);

@@ -2,7 +2,6 @@
 #include "catch.hpp"
 
 #include "../spellcaster/Necromancer.hpp"
-#include "../spell/Heal.hpp"
 #include "../unit/Soldier.hpp"
 
 TEST_CASE( "Tests for Necromancer class" ) {
@@ -108,7 +107,7 @@ TEST_CASE( "Tests for Necromancer class" ) {
     }
 
     SECTION( "Necromancer::changeSpell tests" ) {
-        nec->changeSpell(new Heal(30, 30));
+        nec->changeSpell(heal);
 
         Soldier* soldier = new Soldier("Soldier", 200, 20);
 

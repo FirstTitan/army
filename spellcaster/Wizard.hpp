@@ -2,7 +2,6 @@
 #define WIZARD_HPP
 
 #include "SpellCaster.hpp"
-#include "../spell/FireBall.hpp"
 #include "../ability/WizardAbility.hpp"
 
 class Wizard : public SpellCaster {

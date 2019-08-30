@@ -24,7 +24,7 @@ void SpellCaster::spendMana(int cost) {
     this->magicState->spendMana(cost);
 }
 
-void SpellCaster::changeSpell(Spell* newSpell) {
+void SpellCaster::changeSpell(Spells newSpell) {
     this->magicAbility->changeSpell(newSpell);
 }
 void SpellCaster::cast(Unit* enemy) {

@@ -5,6 +5,7 @@
 #include "../ability/DefaultAbility.hpp"
 #include "../ability/MagicAbility.hpp"
 #include "../state/MagicState.hpp"
+#include "../spell/SpellBook.hpp"
 
 class MagicAbility;
 
@@ -23,7 +24,7 @@ class SpellCaster : public Unit {
         void addMana(int extra);
         void spendMana(int cost);
 
-        void changeSpell(Spell* newSpell);
+        void changeSpell(Spells newSpell);
         virtual void cast(Unit* enemy);
 
         //needed for Warlock

@@ -1,18 +1,18 @@
 all: test_warlock test_necromancer test_priest test_healer test_wizard test_werewolf test_vampire test_berserker test_rogue test_soldier test_state test_magicstate
 test_warlock:
-	g++ ../interface/Observable.cpp ../interface/Observer.cpp test_warlock.cpp ../spellcaster/Warlock.cpp ../spellcaster/SpellCaster.cpp ../unit/Unit.cpp ../unit/Demon.cpp ../unit/Soldier.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/WarlockAbility.cpp -o start
+	g++ ../spell/SpellBook.cpp ../interface/Observable.cpp ../interface/Observer.cpp test_warlock.cpp ../spellcaster/Warlock.cpp ../spellcaster/SpellCaster.cpp ../unit/Unit.cpp ../unit/Demon.cpp ../unit/Soldier.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/WarlockAbility.cpp -o start
 	./start
 test_necromancer:
-	g++ ../interface/Observable.cpp ../interface/Observer.cpp test_necromancer.cpp ../spellcaster/Necromancer.cpp ../spellcaster/SpellCaster.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/NecromancerAbility.cpp ../unit/Soldier.cpp -o start
+	g++ ../spell/SpellBook.cpp ../interface/Observable.cpp ../interface/Observer.cpp test_necromancer.cpp ../spellcaster/Necromancer.cpp ../spellcaster/SpellCaster.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/NecromancerAbility.cpp ../unit/Soldier.cpp -o start
 	./start
 test_priest:
-	g++ ../interface/Observable.cpp test_priest.cpp ../spellcaster/Priest.cpp ../spellcaster/SpellCaster.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/PriestAbility.cpp ../unit/Soldier.cpp ../unit/Vampire.cpp ../ability/VampireAbility.cpp -o start
+	g++ ../spell/SpellBook.cpp ../interface/Observable.cpp test_priest.cpp ../spellcaster/Priest.cpp ../spellcaster/SpellCaster.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/PriestAbility.cpp ../unit/Soldier.cpp ../unit/Vampire.cpp ../ability/VampireAbility.cpp -o start
 	./start
 test_healer:
-	g++ ../interface/Observable.cpp test_healer.cpp ../spellcaster/Healer.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/HealerAbility.cpp ../spellcaster/SpellCaster.cpp ../unit/Soldier.cpp -o start
+	g++ ../spell/SpellBook.cpp ../interface/Observable.cpp test_healer.cpp ../spellcaster/Healer.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/HealerAbility.cpp ../spellcaster/SpellCaster.cpp ../unit/Soldier.cpp -o start
 	./start
 test_wizard:
-	g++ ../interface/Observable.cpp test_wizard.cpp ../spellcaster/Wizard.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/WizardAbility.cpp ../spellcaster/SpellCaster.cpp ../unit/Soldier.cpp -o start
+	g++ ../spell/SpellBook.cpp ../interface/Observable.cpp test_wizard.cpp ../spellcaster/Wizard.cpp ../unit/Unit.cpp ../state/State.cpp ../state/MagicState.cpp ../spell/Spell.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../ability/MagicAbility.cpp ../ability/WizardAbility.cpp ../spellcaster/SpellCaster.cpp ../unit/Soldier.cpp -o start
 	./start
 test_werewolf:
 	g++ ../interface/Observable.cpp test_werewolf.cpp ../unit/Werewolf.cpp ../unit/Unit.cpp ../state/State.cpp ../state/WerewolfState.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../unit/Soldier.cpp -o start

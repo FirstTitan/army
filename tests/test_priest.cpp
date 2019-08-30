@@ -2,7 +2,6 @@
 #include "catch.hpp"
 
 #include "../spellcaster/Priest.hpp"
-#include "../spell/FireBall.hpp"
 #include "../unit/Soldier.hpp"
 #include "../unit/Vampire.hpp"
 
@@ -69,7 +68,7 @@ TEST_CASE( "Tests for Priest class" ) {
     }
 
     SECTION( "Priest::changeSpell/cast/addMana tests" ) {
-        priest->changeSpell(new FireBall(30, 30));
+        priest->changeSpell(fireBall);
 
         priest->cast(soldier);
         REQUIRE( priest->getHitPoints() == 100 );

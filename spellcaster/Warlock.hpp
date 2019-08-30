@@ -3,7 +3,6 @@
 
 #include "SpellCaster.hpp"
 #include "../ability/WarlockAbility.hpp"
-#include "../spell/FireBall.hpp"
 #include "../unit/Demon.hpp"
 #include "../exceptions.hpp"
 

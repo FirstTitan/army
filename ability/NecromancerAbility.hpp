@@ -5,7 +5,7 @@
 
 class NecromancerAbility : public MagicAbility {
     public:
-        NecromancerAbility(SpellCaster* owner, Spell* spell);
+        NecromancerAbility(SpellCaster* owner, Spells spell);
         virtual ~NecromancerAbility();
 
         virtual void cast(Unit* enemy);

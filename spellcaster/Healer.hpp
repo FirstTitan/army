@@ -3,7 +3,6 @@
 
 #include "SpellCaster.hpp"
 #include "../ability/HealerAbility.hpp"
-#include "../spell/Heal.hpp"
 
 class Healer : public SpellCaster {
     public:

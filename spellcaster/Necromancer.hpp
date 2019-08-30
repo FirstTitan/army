@@ -4,7 +4,6 @@
 #include "SpellCaster.hpp"
 #include "../interface/Observer.hpp"
 #include "../ability/NecromancerAbility.hpp"
-#include "../spell/FireBall.hpp"
 
 class Necromancer : public SpellCaster, public Observer {
     public:

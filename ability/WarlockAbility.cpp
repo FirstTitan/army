@@ -1,6 +1,6 @@
 #include "WarlockAbility.hpp"
 
-WarlockAbility::WarlockAbility(SpellCaster* owner, Spell* spell)
+WarlockAbility::WarlockAbility(SpellCaster* owner, Spells spell)
     : MagicAbility(owner, spell) {};
 
 WarlockAbility::~WarlockAbility() {};

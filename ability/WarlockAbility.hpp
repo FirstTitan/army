@@ -5,7 +5,7 @@
 
 class WarlockAbility : public MagicAbility {
     public:
-        WarlockAbility(SpellCaster* owner, Spell* spell);
+        WarlockAbility(SpellCaster* owner, Spells spell);
         virtual ~WarlockAbility();
 
         virtual void cast(Unit* enemy);

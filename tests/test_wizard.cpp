@@ -3,7 +3,6 @@
 
 #include "../spellcaster/Wizard.hpp"
 #include "../unit/Soldier.hpp"
-#include "../spell/Heal.hpp"
 
 TEST_CASE( "Tests for Wizard class" ) {
     Wizard* wizard = new Wizard("Wizard", 100, 10, 150);
@@ -30,7 +29,7 @@ TEST_CASE( "Tests for Wizard class" ) {
     REQUIRE( wizard->getHitPoints() == 90 );
     REQUIRE( wizard->getMana() == 120 );
 
-    wizard->changeSpell(new Heal(30, 30));
+    wizard->changeSpell(heal);
     wizard->cast(enemy);
     REQUIRE( enemy->getHitPoints() == 125 );
     REQUIRE( wizard->getHitPoints() == 90 );

@@ -2,7 +2,7 @@
 
 Necromancer::Necromancer(const char* title, int hitPoints, int damage, int mana)
     : SpellCaster(title, hitPoints, damage, mana) {
-    this->magicAbility = new NecromancerAbility(this, new FireBall(30, 30));
+    this->magicAbility = new NecromancerAbility(this, fireBall);
     this->undead = true;
 }
 

@@ -1,6 +1,6 @@
 #include "HealerAbility.hpp"
 
-HealerAbility::HealerAbility(SpellCaster* owner, Spell* spell)
+HealerAbility::HealerAbility(SpellCaster* owner, Spells spell)
     : MagicAbility(owner, spell) {};
 
 HealerAbility::~HealerAbility() {};

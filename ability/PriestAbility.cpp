@@ -1,6 +1,6 @@
 #include "PriestAbility.hpp"
 
-PriestAbility::PriestAbility(SpellCaster* owner, Spell* spell)
+PriestAbility::PriestAbility(SpellCaster* owner, Spells spell)
     : MagicAbility(owner, spell) {};
 
 PriestAbility::~PriestAbility() {};

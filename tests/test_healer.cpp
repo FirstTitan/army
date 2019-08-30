@@ -3,7 +3,6 @@
 
 #include "../spellcaster/Healer.hpp"
 #include "../unit/Soldier.hpp"
-#include "../spell/FireBall.hpp"
 
 TEST_CASE( "Tests for Healer class" ) {
     Healer* healer = new Healer("Healer", 100, 10, 150);
@@ -33,7 +32,7 @@ TEST_CASE( "Tests for Healer class" ) {
     REQUIRE( healer->getHitPoints() == 90 );
     REQUIRE( healer->getMana() == 120 );
 
-    healer->changeSpell(new FireBall(30, 30));
+    healer->changeSpell(fireBall);
 
     healer->cast(enemy);
     REQUIRE( enemy->getHitPoints() == 115 );

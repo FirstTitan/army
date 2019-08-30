@@ -7,6 +7,7 @@
 #include "spell/Spell.hpp"
 #include "spell/Heal.hpp"
 #include "spell/FireBall.hpp"
+#include "spell/SpellBook.hpp"
 #include "ability/Ability.hpp"
 #include "ability/MagicAbility.hpp"
 #include "ability/DefaultAbility.hpp"

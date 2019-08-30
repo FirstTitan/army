@@ -1,6 +1,6 @@
 #include "WizardAbility.hpp"
 
-WizardAbility::WizardAbility(SpellCaster* owner, Spell* spell)
+WizardAbility::WizardAbility(SpellCaster* owner, Spells spell)
     : MagicAbility(owner, spell) {};
 
 WizardAbility::~WizardAbility() {};
