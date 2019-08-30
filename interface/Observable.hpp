@@ -18,6 +18,7 @@ class Observable {
         void removeObserver(Observer* obs);
 
         virtual void notify();
+        virtual void notify(Observable* obs);
 };
 
 #endif //OBSERVABLE_HPP

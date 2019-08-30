@@ -19,3 +19,10 @@ void Observable::notify() {
         (*it)->update(this);
     }
 }
+
+void Observable::notify(Observable* obs) {
+    std::set<Observer*>::iterator it = this->observers.begin();
+    for ( ; it != this->observers.end(); it++ ) {
+        (*it)->update(obs);
+    }
+}

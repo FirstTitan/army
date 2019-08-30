@@ -5,9 +5,6 @@
 #include "../spell/Heal.hpp"
 #include "../unit/Soldier.hpp"
 
-//HELP
-//1.5 COMBAT AND 0.5 HEAL
-
 TEST_CASE( "Tests for Necromancer class" ) {
     Necromancer* nec = new Necromancer("Necromancer", 150, 12, 150);
 

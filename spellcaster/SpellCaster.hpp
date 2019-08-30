@@ -25,6 +25,9 @@ class SpellCaster : public Unit {
 
         void changeSpell(Spell* newSpell);
         virtual void cast(Unit* enemy);
+
+        //needed for Warlock
+        virtual int getCounter() const;
 };
 
 #endif //SPELL_CASTER_HPP

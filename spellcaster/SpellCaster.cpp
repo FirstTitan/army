@@ -30,3 +30,7 @@ void SpellCaster::changeSpell(Spell* newSpell) {
 void SpellCaster::cast(Unit* enemy) {
     this->magicAbility->cast(enemy);
 }
+
+int SpellCaster::getCounter() const {
+    return 0;
+}
