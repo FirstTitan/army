@@ -8,8 +8,6 @@ class Vampire : public Unit {
     public:
         Vampire(const char* title, int hitPoints, int damage);
         virtual ~Vampire();
-
-        void turnToVampire(Unit* unit);
 };
 
 #endif //VAMPIRE_HPP

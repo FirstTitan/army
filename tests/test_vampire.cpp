@@ -153,6 +153,8 @@ TEST_CASE( "Tests for Vampire class" ) {
 
     SECTION( "Vampire::turnToVampire tests" ) {
         Soldier* soldier = new Soldier("Soldier", 150, 20);
+        Soldier* soldier2 = new Soldier("Kolyan", 150, 20);
+        Werewolf* werewolf = new Werewolf("Werewolf", 190, 25);
 
         REQUIRE( soldier->getTitle() == "Soldier" );
         REQUIRE( soldier->getHitPoints() == 150 );
@@ -161,16 +163,12 @@ TEST_CASE( "Tests for Vampire class" ) {
         REQUIRE( soldier->isVampire() == false );
         REQUIRE( soldier->isUndead() == false );
 
-        vampire->turnToVampire(soldier);
-
-        REQUIRE( (std::string)soldier->getTitle() == "Vampire" );
-        REQUIRE( soldier->getHitPoints() == 200 );
-        REQUIRE( soldier->getHitPointsLimit() == 200 );
-        REQUIRE( soldier->getDamage() == 30 );
-        REQUIRE( soldier->isVampire() == true );
-        REQUIRE( soldier->isUndead() == true );
-
-        Werewolf* werewolf = new Werewolf("Werewolf", 190, 25);
+        REQUIRE( soldier2->getTitle() == "Kolyan" );
+        REQUIRE( soldier2->getHitPoints() == 150 );
+        REQUIRE( soldier2->getHitPoints() == 150 );
+        REQUIRE( soldier2->getDamage() == 20 );
+        REQUIRE( soldier2->isVampire() == false );
+        REQUIRE( soldier2->isUndead() == false );
 
         REQUIRE( werewolf->getTitle() == "Werewolf" );
         REQUIRE( werewolf->getHitPoints() == 190 );
@@ -179,7 +177,25 @@ TEST_CASE( "Tests for Vampire class" ) {
         REQUIRE( werewolf->isVampire() == false );
         REQUIRE( werewolf->isUndead() == false );
 
-        vampire->turnToVampire(werewolf);
+        vampire->turn(soldier);
+
+        REQUIRE( (std::string)soldier->getTitle() == "Vampire" );
+        REQUIRE( soldier->getHitPoints() == 200 );
+        REQUIRE( soldier->getHitPointsLimit() == 200 );
+        REQUIRE( soldier->getDamage() == 30 );
+        REQUIRE( soldier->isVampire() == true );
+        REQUIRE( soldier->isUndead() == true );
+
+        soldier->turn(soldier2);
+
+        REQUIRE( (std::string)soldier2->getTitle() == "Vampire" );
+        REQUIRE( soldier2->getHitPoints() == 200 );
+        REQUIRE( soldier2->getHitPointsLimit() == 200 );
+        REQUIRE( soldier2->getDamage() == 30 );
+        REQUIRE( soldier2->isVampire() == true );
+        REQUIRE( soldier2->isUndead() == true );
+
+        vampire->turn(werewolf);
 
         REQUIRE( werewolf->getTitle() == "Werewolf" );
         REQUIRE( werewolf->getHitPoints() == 190 );

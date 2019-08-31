@@ -40,6 +40,13 @@ void Unit::setWerewolf(Unit* unit, bool flag) {
     unit->werewolf = flag;
 }
 
+void Unit::setAbility(Ability* ability) {
+    this->ability = ability;
+}
+void Unit::setState(State* state) {
+    this->state = state;
+}
+
 const char* Unit::getTitle() const {
     return this->state->getTitle();
 }
@@ -76,6 +83,10 @@ void Unit::attack(Unit* enemy) {
 }
 void Unit::counterAttack(Unit* enemy) {
     this->ability->counterAttack(enemy);
+}
+
+void Unit::turn(Unit* unit) {
+    this->ability->turn(unit);
 }
 
 void Unit::showMyself() {

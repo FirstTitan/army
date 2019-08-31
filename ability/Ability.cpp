@@ -15,3 +15,5 @@ void Ability::counterAttack(Unit* enemy) {
 
     enemy->takeDamage(this->owner->getDamage()/2);
 }
+
+void Ability::turn(Unit* unit) {}

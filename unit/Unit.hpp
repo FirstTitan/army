@@ -32,6 +32,9 @@ class Unit : public Observable {
         void setVampire(Unit* unit, bool flag);
         void setWerewolf(Unit* unit, bool flag);
 
+        void setAbility(Ability* ability);
+        void setState(State* state);
+
         const char* getTitle() const;
         int getHitPoints() const;
         int getHitPointsLimit() const;
@@ -43,6 +46,8 @@ class Unit : public Observable {
 
         virtual void attack(Unit* enemy);
         virtual void counterAttack(Unit* enemy);
+
+        virtual void turn(Unit* unit);
 
         virtual void showMyself();
 };

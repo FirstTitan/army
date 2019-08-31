@@ -18,3 +18,12 @@ void VampireAbility::counterAttack(Unit* enemy) {
     enemy->takeDamage(this->owner->getDamage()/2);
     this->owner->addHitPoints(this->owner->getDamage()/4);
 }
+
+void VampireAbility::turn(Unit* unit) {
+    if ( !unit->isWerewolf() &&  !unit->isVampire() ) {
+        unit->setAbility(new VampireAbility(unit));
+        unit->setState(new State("Vampire", 200, 30));
+        unit->setVampire(unit, true);
+        unit->setUndead(unit, true);
+    }
+}
