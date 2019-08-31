@@ -16,6 +16,8 @@ class Demon : public Soldier, public Observer {
         int getID() const;
 
         virtual void update(Observable* obs);
+
+        virtual void showMyself();
 };
 
 #endif //DEMON_HPP

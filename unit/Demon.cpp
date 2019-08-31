@@ -16,4 +16,10 @@ void Demon::update(Observable* obs) {
     this->attack((Unit*)obs);
 }
 
+void Demon::showMyself() {
+    std::cout << "Name: " << this->getTitle() << "\nHit points: " << this->getHitPoints()
+        << '/' << this->getHitPointsLimit() << "\nDamage: " << this->getDamage()
+        << "\nID: " << this->getID() << std::endl;
+}
+
 int Demon::total = 0;
