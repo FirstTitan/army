@@ -1,6 +1,7 @@
 #ifndef UNIT_HPP
 #define UNIT_HPP
 
+#include <iomanip>
 #include "../state/State.hpp"
 #include "../ability/Ability.hpp"
 #include "../interface/Observable.hpp"
@@ -14,6 +15,7 @@ class Unit : public Observable {
         bool undead;
         bool vampire;
         bool werewolf;
+        bool magicMan;
 
     public:
         Unit(const char* title, int hitPoints, int damage);
@@ -24,6 +26,7 @@ class Unit : public Observable {
         bool isUndead() const;
         bool isVampire() const;
         bool isWerewolf() const;
+        bool isMagicMan() const;
 
         void setUndead(Unit* unit, bool flag);
         void setVampire(Unit* unit, bool flag);
@@ -40,6 +43,8 @@ class Unit : public Observable {
 
         virtual void attack(Unit* enemy);
         virtual void counterAttack(Unit* enemy);
+
+        virtual void showMyself();
 };
 
 #endif //UNIT_HPP

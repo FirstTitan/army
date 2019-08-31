@@ -2,8 +2,9 @@
 #include "Army.hpp"
 
 int main() {
-    Vampire* vampire = new Vampire("Vampire", 150, 20);
-    
+    Warlock* war = new Warlock("Warlock", 100, 10, 150);
+
+    war->showMyself();
 
     return 0;
 }

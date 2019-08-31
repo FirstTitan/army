@@ -3,7 +3,7 @@
 SpellCaster::SpellCaster(const char* title, int hitPoints, int damage, int mana)
     : Unit(title, hitPoints, damage), magicState(new MagicState(mana)) {
         this->ability = new DefaultAbility(this);
-
+        this->magicMan = true;
 }
 SpellCaster::~SpellCaster() {
     delete(this->magicState);
@@ -33,4 +33,10 @@ void SpellCaster::cast(Unit* enemy) {
 
 int SpellCaster::getCounter() const {
     return 0;
+}
+
+void SpellCaster::showMyself() {
+    std::cout << "Name: " << this->getTitle() << "\nHit points: " << this->getHitPoints()
+        << '/' << this->getHitPointsLimit() << "\nDamage: " << this->getDamage()
+        << "\nMana: " << this->getMana() << '/' << this->getManaLimit() << std::endl;
 }

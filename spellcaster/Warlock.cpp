@@ -24,3 +24,10 @@ Demon* Warlock::summonDemon() {
         throw OutOfDemonLimitException();
     }
 }
+
+void Warlock::showMyself() {
+    std::cout << "Name: " << this->getTitle() << "\nHit points: " << this->getHitPoints()
+        << '/' << this->getHitPointsLimit() << "\nDamage: " << this->getDamage()
+        << "\nMana: " << this->getMana() << '/' << this->getManaLimit()
+        << "\nThe number of my demons: " << this->getCounter() << std::endl;
+}

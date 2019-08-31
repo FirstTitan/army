@@ -5,6 +5,7 @@ Unit::Unit(const char* title, int hitPoints, int damage)
         this->undead = false;
         this->vampire = false;
         this->werewolf = false;
+        this->magicMan = false;
 }
     
 Unit::~Unit() {
@@ -24,6 +25,9 @@ bool Unit::isVampire() const {
 }
 bool Unit::isWerewolf() const {
     return this->werewolf;
+}
+bool Unit::isMagicMan() const {
+    return this->magicMan;
 }
 
 void Unit::setUndead(Unit* unit, bool flag) {
@@ -72,4 +76,10 @@ void Unit::attack(Unit* enemy) {
 }
 void Unit::counterAttack(Unit* enemy) {
     this->ability->counterAttack(enemy);
+}
+
+void Unit::showMyself() {
+    std::cout << "Name: " << this->getTitle() << "\nHit points: " << this->getHitPoints()
+        << '/' << this->getHitPointsLimit() << "\nDamage: " << this->getDamage()
+        << std::endl;
 }

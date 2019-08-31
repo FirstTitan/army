@@ -17,6 +17,8 @@ class Warlock : public SpellCaster {
         virtual int getCounter() const;
 
         virtual Demon* summonDemon();
+
+        virtual void showMyself();
 };
 
 #endif //WARLOCK_HPP
