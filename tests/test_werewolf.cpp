@@ -32,7 +32,7 @@ TEST_CASE( "Tests for Werewolf class" ) {
     }
 
     SECTION( "Werewolf::takeDamage for wolf tests" ) {
-        werewolf->turnWolf();
+        werewolf->turnMyself();
 
         REQUIRE( (std::string)werewolf->getTitle() == "Hulk" );
         REQUIRE( werewolf->getHitPoints() == 400 );
@@ -73,7 +73,7 @@ TEST_CASE( "Tests for Werewolf class" ) {
     }
 
     SECTION( "Werewolf::takeMagicDamage for wolf tests" ) {
-        werewolf->turnWolf();
+        werewolf->turnMyself();
 
         int damage = 40;
         int iterations = werewolf->getHitPoints() / damage;
@@ -160,7 +160,7 @@ TEST_CASE( "Tests for Werewolf class" ) {
         REQUIRE( enemy->getHitPointsLimit() == 200 );
         REQUIRE( enemy->getDamage() == 20 );
 
-        werewolf->turnWolf();
+        werewolf->turnMyself();
 
         werewolf->attack(enemy);
 
@@ -191,7 +191,7 @@ TEST_CASE( "Tests for Werewolf class" ) {
         }
     }
 
-    SECTION( "Werewolf::turnBack test" ) {
+    SECTION( "Werewolf::turnMyself test" ) {
         Soldier* soldier = new Soldier("Soldier", 200, 20);
 
         REQUIRE( soldier->getTitle() == "Soldier" );
@@ -204,7 +204,7 @@ TEST_CASE( "Tests for Werewolf class" ) {
         REQUIRE( werewolf->getHitPointsLimit() == 200 );
         REQUIRE( werewolf->getDamage() == 20 );
 
-        werewolf->turnWolf();
+        werewolf->turnMyself();
 
         REQUIRE( (std::string)werewolf->getTitle() == "Hulk" );
         REQUIRE( werewolf->getHitPoints() == 400 );
@@ -215,15 +215,15 @@ TEST_CASE( "Tests for Werewolf class" ) {
         REQUIRE( soldier->getHitPoints() == 180 );
         REQUIRE( werewolf->getHitPoints() == 380 );
 
-        werewolf->turnBack();
+        werewolf->turnMyself();
 
-        REQUIRE( werewolf->getTitle() == "Werewolf" );
+        REQUIRE( (std::string)werewolf->getTitle() == "Werewolf" );
         REQUIRE( werewolf->getHitPoints() == 190 );
         REQUIRE( werewolf->getHitPointsLimit() == 200 );
         REQUIRE( werewolf->getDamage() == 20 );
     }
 
-    SECTION( "Werewolf::turnToWerewolf tests" ) {
+    SECTION( "Werewolf::turn tests" ) {
         Necromancer* nec = new Necromancer("Necromancer", 150, 12, 150);
 
         REQUIRE( nec->getTitle() == "Necromancer" );
@@ -235,7 +235,7 @@ TEST_CASE( "Tests for Werewolf class" ) {
         REQUIRE( nec->isWerewolf() == false );
         REQUIRE( nec->isUndead() == true );
 
-        werewolf->turnToWerewolf(nec);
+        werewolf->turn(nec);
 
         REQUIRE( (std::string)nec->getTitle() == "Werewolf" );
         REQUIRE( nec->getHitPoints() == 200 );
@@ -243,6 +243,29 @@ TEST_CASE( "Tests for Werewolf class" ) {
         REQUIRE( nec->getDamage() == 20 );
         REQUIRE( nec->isWerewolf() == true );
         REQUIRE( nec->isUndead() == false );
+
+        Soldier* soldier = new Soldier("Soldier", 180, 15);
+
+        nec->turn(soldier);
+
+        REQUIRE( (std::string)soldier->getTitle() == "Werewolf" );
+        REQUIRE( soldier->getHitPoints() == 200 );
+        REQUIRE( soldier->getHitPointsLimit() == 200 );
+        REQUIRE( soldier->getDamage() == 20 );
+
+        soldier->turnMyself();
+
+        REQUIRE( (std::string)soldier->getTitle() == "Hulk" );
+        REQUIRE( soldier->getHitPoints() == 400 );
+        REQUIRE( soldier->getHitPointsLimit() == 400 );
+        REQUIRE( soldier->getDamage() == 40 );
+
+        soldier->turnMyself();
+
+        REQUIRE( (std::string)soldier->getTitle() == "Werewolf" );
+        REQUIRE( soldier->getHitPoints() == 200 );
+        REQUIRE( soldier->getHitPointsLimit() == 200 );
+        REQUIRE( soldier->getDamage() == 20 );
 
         Vampire* vampire = new Vampire("Vampire", 200, 40 );
 
@@ -253,7 +276,7 @@ TEST_CASE( "Tests for Werewolf class" ) {
         REQUIRE( vampire->isWerewolf() == false );
         REQUIRE( vampire->isUndead() == true );
 
-        werewolf->turnToWerewolf(vampire);
+        werewolf->turn(vampire);
 
         REQUIRE( vampire->getTitle() == "Vampire" );
         REQUIRE( vampire->getHitPoints() == 200 );

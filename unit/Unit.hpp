@@ -16,6 +16,7 @@ class Unit : public Observable {
         bool vampire;
         bool werewolf;
         bool magicMan;
+        bool wolf;
 
     public:
         Unit(const char* title, int hitPoints, int damage);
@@ -27,10 +28,12 @@ class Unit : public Observable {
         bool isVampire() const;
         bool isWerewolf() const;
         bool isMagicMan() const;
+        bool isWolf() const;
 
         void setUndead(Unit* unit, bool flag);
         void setVampire(Unit* unit, bool flag);
         void setWerewolf(Unit* unit, bool flag);
+        void setWolf(Unit* unit, bool flag);
 
         void setAbility(Ability* ability);
         void setState(State* state);
@@ -48,6 +51,7 @@ class Unit : public Observable {
         virtual void counterAttack(Unit* enemy);
 
         virtual void turn(Unit* unit);
+        virtual void turnMyself();
 
         virtual void showMyself();
 };

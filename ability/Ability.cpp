@@ -17,3 +17,4 @@ void Ability::counterAttack(Unit* enemy) {
 }
 
 void Ability::turn(Unit* unit) {}
+void Ability::turnMyself() {}

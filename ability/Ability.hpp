@@ -16,6 +16,7 @@ class Ability {
         virtual void counterAttack(Unit *enemy);
 
         virtual void turn(Unit* unit);
+        virtual void turnMyself();
 };
 
 #endif //ABILITY_HPP
