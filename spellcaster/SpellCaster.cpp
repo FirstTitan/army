@@ -23,6 +23,10 @@ void SpellCaster::addMana(int extra) {
 void SpellCaster::spendMana(int cost) {
     this->magicState->spendMana(cost);
 }
+void SpellCaster::clearMagicAbility() {
+    this->magicAbility = nullptr;
+    this->magicMan = false;
+}
 
 void SpellCaster::changeSpell(Spells newSpell) {
     this->magicAbility->changeSpell(newSpell);
@@ -40,7 +44,9 @@ Demon* SpellCaster::summonDemon() {
 }
 
 void SpellCaster::showMyself() {
-    std::cout << "Name: " << this->getTitle() << "\nHit points: " << this->getHitPoints()
-        << '/' << this->getHitPointsLimit() << "\nDamage: " << this->getDamage()
-        << "\nMana: " << this->getMana() << '/' << this->getManaLimit() << std::endl;
+    Unit::showMyself();
+    if ( this->isMagicMan() ) {
+        std::cout << "\nMana: " << this->getMana() << '/'
+            << this->getManaLimit() << std::endl;
+    }
 }

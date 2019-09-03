@@ -18,7 +18,7 @@ test_werewolf:
 	g++ ../ability/WerewolfAbility.cpp ../ability/MagicAbility.cpp ../ability/NecromancerAbility.cpp ../spellcaster/SpellCaster.cpp ../spellcaster/Necromancer.cpp ../interface/Observer.cpp ../spell/SpellBook.cpp ../spell/Spell.cpp ../spell/FireBall.cpp ../spell/Heal.cpp ../state/MagicState.cpp ../interface/Observable.cpp test_werewolf.cpp ../unit/Werewolf.cpp ../unit/Unit.cpp ../state/State.cpp ../state/WerewolfState.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../unit/Soldier.cpp ../unit/Vampire.cpp ../ability/VampireAbility.cpp -o start
 	./start
 test_vampire:
-	g++ ../unit/Werewolf.cpp ../ability/WerewolfAbility.cpp ../state/WerewolfState.cpp ../interface/Observable.cpp test_vampire.cpp ../unit/Vampire.cpp ../unit/Unit.cpp ../state/State.cpp ../ability/Ability.cpp ../ability/VampireAbility.cpp ../unit/Soldier.cpp ../ability/DefaultAbility.cpp -o start
+	g++ ../spellcaster/SpellCaster.cpp ../ability/MagicAbility.cpp ../state/MagicState.cpp ../spell/SpellBook.cpp ../spell/Heal.cpp ../spell/FireBall.cpp ../spell/Spell.cpp ../unit/Werewolf.cpp ../ability/WerewolfAbility.cpp ../state/WerewolfState.cpp ../interface/Observable.cpp test_vampire.cpp ../unit/Vampire.cpp ../unit/Unit.cpp ../state/State.cpp ../ability/Ability.cpp ../ability/VampireAbility.cpp ../unit/Soldier.cpp ../ability/DefaultAbility.cpp -o start
 	./start
 test_berserker:
 	g++ ../interface/Observable.cpp test_berserker.cpp ../unit/Berserker.cpp ../unit/Unit.cpp ../state/State.cpp ../ability/Ability.cpp ../ability/DefaultAbility.cpp ../state/BerserkerState.cpp -o start

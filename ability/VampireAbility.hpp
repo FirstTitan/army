@@ -3,6 +3,7 @@
 
 #include "Ability.hpp"
 #include "../unit/Unit.hpp"
+#include "../spellcaster/SpellCaster.hpp"
 
 class VampireAbility : public Ability {
     public:

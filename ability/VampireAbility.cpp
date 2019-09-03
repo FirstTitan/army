@@ -1,7 +1,5 @@
 #include "VampireAbility.hpp"
 
-#include <iostream>
-
 VampireAbility::VampireAbility(Unit* owner) : Ability(owner) {};
 VampireAbility::~VampireAbility() {};
 
@@ -25,5 +23,8 @@ void VampireAbility::turn(Unit* unit) {
         unit->setState(new State("Vampire", 200, 30));
         unit->setVampire(unit, true);
         unit->setUndead(unit, true);
+        if ( unit->isMagicMan() ) {
+            ((SpellCaster*)(unit))->clearMagicAbility();
+        }
     }
 }

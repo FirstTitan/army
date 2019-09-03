@@ -24,6 +24,7 @@ class SpellCaster : public Unit {
 
         void addMana(int extra);
         void spendMana(int cost);
+        void clearMagicAbility();
 
         void changeSpell(Spells newSpell);
         virtual void cast(Unit* enemy);
