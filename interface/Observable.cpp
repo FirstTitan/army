@@ -16,13 +16,13 @@ void Observable::removeObserver(Observer* obs) {
 void Observable::notify() {
     std::set<Observer*>::iterator it = this->observers.begin();
     for ( ; it != this->observers.end(); it++ ) {
-        (*it)->update(this);
+        (*it)->update(this, true);
     }
 }
 
 void Observable::notify(Observable* obs) {
     std::set<Observer*>::iterator it = this->observers.begin();
     for ( ; it != this->observers.end(); it++ ) {
-        (*it)->update(obs);
+        (*it)->update(obs, false);
     }
 }

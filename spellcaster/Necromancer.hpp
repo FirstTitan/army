@@ -13,7 +13,7 @@ class Necromancer : public SpellCaster, public Observer {
         virtual void attack(Unit* enemy);
         virtual void cast(Unit* enemy);
 
-        virtual void update(Observable* obs);
+        virtual void update(Observable* obs, bool isObservable);
 };
 
 #endif //NECROMANCER_HPP

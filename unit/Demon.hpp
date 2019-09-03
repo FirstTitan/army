@@ -9,7 +9,7 @@ class Demon : public Soldier, public Observer {
         Demon(const char* title, int hitPoints, int damage);
         virtual ~Demon();
 
-        virtual void update(Observable* obs);
+        virtual void update(Observable* obs, bool isObservable);
 };
 
 #endif //DEMON_HPP

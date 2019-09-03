@@ -12,7 +12,7 @@ class Observer {
     public:
         virtual ~Observer();
 
-        virtual void update(Observable* obs) = 0;
+        virtual void update(Observable* obs, bool isObservable) = 0;
 };
 
 #endif //OBSERVER_HPP

@@ -25,6 +25,7 @@ void SpellCaster::spendMana(int cost) {
 }
 void SpellCaster::clearMagicAbility() {
     this->magicAbility = nullptr;
+    this->notify();
     this->magicMan = false;
 }
 
