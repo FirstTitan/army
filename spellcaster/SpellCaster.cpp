@@ -43,7 +43,7 @@ Demon* SpellCaster::summonDemon() {
 void SpellCaster::showMyself() {
     Unit::showMyself();
     if ( this->isMagicMan() ) {
-        std::cout << "\nMana: " << this->getMana() << '/'
+        std::cout << "Mana: " << this->getMana() << '/'
             << this->getManaLimit() << std::endl;
     }
 }

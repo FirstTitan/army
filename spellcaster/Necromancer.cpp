@@ -18,7 +18,7 @@ void Necromancer::cast(Unit* enemy) {
     enemy->addObserver(this);
 }
 
-void Necromancer::update(Observable* obs, bool isObservable) {
+void Necromancer::update(Observable* obs, StateObserver state) {
     this->addHitPoints(((Unit*)(obs))->getHitPointsLimit()/10);
     obs->removeObserver(this);
 }

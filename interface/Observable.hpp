@@ -18,6 +18,7 @@ class Observable {
 
         void addObserver(Observer* obs);
         void removeObserver(Observer* obs);
+        void checkAliveObservers();
 
         virtual void notify();
         virtual void notify(Observable* obs);

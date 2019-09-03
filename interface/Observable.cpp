@@ -1,5 +1,4 @@
 #include "Observable.hpp"
-
 #include <iostream>
 
 Observable::Observable() {};
@@ -16,17 +15,23 @@ void Observable::addObserver(Observer* obs) {
 void Observable::removeObserver(Observer* obs) {
     this->observers.erase(obs);
 }
+void Observable::checkAliveObservers() {
+    std::set<Observer*>::iterator it = this->observers.begin();
+    for ( ; it != this->observers.end(); it++ ) {
+            (*it)->update(this, checkAlive);
+    }
+}
 
 void Observable::notify() {
     std::set<Observer*>::iterator it = this->observers.begin();
     for ( ; it != this->observers.end(); it++ ) {
-        (*it)->update(this, true);
+        (*it)->update(this, isObservable);
     }
 }
 
 void Observable::notify(Observable* obs) {
     std::set<Observer*>::iterator it = this->observers.begin();
     for ( ; it != this->observers.end(); it++ ) {
-        (*it)->update(obs, false);
+        (*it)->update(obs, isNotObservable);
     }
 }

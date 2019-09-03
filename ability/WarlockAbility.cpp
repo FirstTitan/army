@@ -16,6 +16,7 @@ void WarlockAbility::cast(Unit* enemy) {
             this->spell->action(enemy, 0.5);
         }
     } else {
+        this->owner->checkAliveObservers();
         this->owner->spendMana(20*this->owner->getNumberObservers());
         this->owner->notify(enemy);
     }
