@@ -8,6 +8,10 @@ WarlockAbility::~WarlockAbility() {};
 void WarlockAbility::cast(Unit* enemy) {
     this->owner->ensureIsAlive();
 
+    if ( this->owner->getNumberObservers() > 0 ) {
+        this->owner->checkAliveObservers();
+    }
+
     if ( this->owner->getNumberObservers() == 0 ) {
         this->owner->spendMana(this->spell->getCost());
         if ( this->spell->isCombat() ) {
@@ -16,7 +20,6 @@ void WarlockAbility::cast(Unit* enemy) {
             this->spell->action(enemy, 0.5);
         }
     } else {
-        this->owner->checkAliveObservers();
         this->owner->spendMana(20*this->owner->getNumberObservers());
         this->owner->notify(enemy);
     }

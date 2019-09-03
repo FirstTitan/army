@@ -5,12 +5,9 @@ MagicAbility::MagicAbility(SpellCaster* owner, Spells spell)
         this->spell = SpellBook::getSpellBook()->getSpell(spell);
 }
 
-MagicAbility::~MagicAbility() {
-    delete(this->spell);
-}
+MagicAbility::~MagicAbility() {}
 
 void MagicAbility::changeSpell(Spells newSpell) {
-    delete(this->spell);
     this->spell = SpellBook::getSpellBook()->getSpell(newSpell);
 }
 
