@@ -78,18 +78,15 @@ TEST_CASE( "Tests for Warlock class" ) {
         Demon* demon = warlock->summonDemon();
 
         REQUIRE( (std::string)demon->getTitle() == "Demon" );
-        REQUIRE( demon->getID() == 1 );
         REQUIRE( demon->getHitPoints() == 200 );
         REQUIRE( demon->getHitPointsLimit() == 200 );
         REQUIRE( demon->getDamage() == 20 );
         REQUIRE( warlock->getCounter() == 1 );
 
         Demon* demon2 = warlock->summonDemon();
-        REQUIRE( demon2->getID() == 2 );
         REQUIRE( warlock->getCounter() == 2 );
 
         Demon* demon3 = warlock->summonDemon();
-        REQUIRE( demon3->getID() == 3 );
         REQUIRE( warlock->getCounter() == 3 );
 
         try {

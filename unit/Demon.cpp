@@ -1,25 +1,10 @@
 #include "Demon.hpp"
 
 Demon::Demon(const char* title, int hitPoints, int damage)
-    : Soldier(title, hitPoints, damage) {
-        total += 1;
-        this->id = total;
-}
+    : Soldier(title, hitPoints, damage) {};
 
 Demon::~Demon() {};
-
-int Demon::getID() const {
-    return this->id;
-}
 
 void Demon::update(Observable* obs) {
     this->attack((Unit*)obs);
 }
-
-void Demon::showMyself() {
-    std::cout << "Name: " << this->getTitle() << "\nHit points: " << this->getHitPoints()
-        << '/' << this->getHitPointsLimit() << "\nDamage: " << this->getDamage()
-        << "\nID: " << this->getID() << std::endl;
-}
-
-int Demon::total = 0;
