@@ -81,18 +81,18 @@ TEST_CASE( "Tests for Warlock class" ) {
         REQUIRE( demon->getHitPoints() == 200 );
         REQUIRE( demon->getHitPointsLimit() == 200 );
         REQUIRE( demon->getDamage() == 20 );
-        REQUIRE( warlock->getCounter() == 1 );
+        REQUIRE( warlock->getNumberObservers() == 1 );
 
         Demon* demon2 = warlock->summonDemon();
-        REQUIRE( warlock->getCounter() == 2 );
+        REQUIRE( warlock->getNumberObservers() == 2 );
 
         Demon* demon3 = warlock->summonDemon();
-        REQUIRE( warlock->getCounter() == 3 );
+        REQUIRE( warlock->getNumberObservers() == 3 );
 
         try {
             Demon* demon4 = warlock->summonDemon();
         } catch ( OutOfDemonLimitException ) {
-            REQUIRE( warlock->getCounter() == 3 );
+            REQUIRE( warlock->getNumberObservers() == 3 );
         }
 
         warlock->cast(soldier);

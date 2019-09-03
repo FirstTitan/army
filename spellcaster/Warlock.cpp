@@ -11,6 +11,6 @@ void Warlock::showMyself() {
     Unit::showMyself();
     if ( this->isMagicMan() ) {
         std::cout << "Mana: " << this->getMana() << '/' << this->getManaLimit()
-            << "\nThe number of my demons: " << this->getCounter() << std::endl;
+            << "\nThe number of my demons: " << this->getNumberObservers() << std::endl;
     }
 }

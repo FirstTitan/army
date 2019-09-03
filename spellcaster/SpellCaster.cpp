@@ -36,10 +36,6 @@ void SpellCaster::cast(Unit* enemy) {
     this->magicAbility->cast(enemy);
 }
 
-int SpellCaster::getCounter() const {
-    this->magicAbility->getCounter();
-}
-
 Demon* SpellCaster::summonDemon() {
     return this->magicAbility->summonDemon();
 }

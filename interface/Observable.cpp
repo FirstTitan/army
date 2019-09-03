@@ -5,6 +5,10 @@
 Observable::Observable() {};
 Observable::~Observable() {};
 
+int Observable::getNumberObservers() const {
+    return this->observers.size();
+}
+
 void Observable::addObserver(Observer* obs) {
     observers.insert(obs);
 }

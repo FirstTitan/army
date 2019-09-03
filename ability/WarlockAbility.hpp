@@ -5,14 +5,9 @@
 #include "../exceptions.hpp"
 
 class WarlockAbility : public MagicAbility {
-    protected:
-        int counterDemons;
-
     public:
         WarlockAbility(SpellCaster* owner, Spells spell);
         virtual ~WarlockAbility();
-
-        virtual int getCounter() const;
 
         virtual void cast(Unit* enemy);
 

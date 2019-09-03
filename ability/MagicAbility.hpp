@@ -17,8 +17,6 @@ class MagicAbility {
         MagicAbility(SpellCaster* owner, Spells spell);
         virtual ~MagicAbility();
 
-        virtual int getCounter() const;
-
         void changeSpell(Spells newSpell);
         virtual void cast(Unit* enemy);
 

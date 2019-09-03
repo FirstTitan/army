@@ -14,6 +14,8 @@ class Observable {
     public:
         virtual ~Observable();
 
+        int getNumberObservers() const;
+
         void addObserver(Observer* obs);
         void removeObserver(Observer* obs);
 

@@ -9,10 +9,6 @@ MagicAbility::~MagicAbility() {
     delete(this->spell);
 }
 
-int MagicAbility::getCounter() const {
-    return 0;
-}
-
 void MagicAbility::changeSpell(Spells newSpell) {
     delete(this->spell);
     this->spell = SpellBook::getSpellBook()->getSpell(newSpell);
