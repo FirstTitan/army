@@ -3,6 +3,7 @@
 
 #include "Ability.hpp"
 #include "../state/WerewolfState.hpp"
+#include "../spellcaster/SpellCaster.hpp"
 
 class WerewolfAbility : public Ability {
     protected:

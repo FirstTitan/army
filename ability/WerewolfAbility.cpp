@@ -19,6 +19,9 @@ void WerewolfAbility::turn(Unit* enemy) {
         enemy->setState(new State(this->name, 200, 20));
         enemy->setWerewolf(enemy, true);
         enemy->setUndead(enemy, false);
+        if ( enemy->isMagicMan() ) {
+            ((SpellCaster*)(enemy))->clearMagicAbility();
+        }
     }
 }
 void WerewolfAbility::turnMyself() {
