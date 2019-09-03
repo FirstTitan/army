@@ -32,7 +32,11 @@ void SpellCaster::cast(Unit* enemy) {
 }
 
 int SpellCaster::getCounter() const {
-    return 0;
+    this->magicAbility->getCounter();
+}
+
+Demon* SpellCaster::summonDemon() {
+    return this->magicAbility->summonDemon();
 }
 
 void SpellCaster::showMyself() {

@@ -3,9 +3,6 @@
 Werewolf::Werewolf(const char* title, int hitPoints, int damage)
     : Unit(title, hitPoints, damage) {
         this->ability = new WerewolfAbility(this);
-        this->title = title;
-        this->hitPointsLimit = hitPoints;
-        this->damage = damage;
         this->werewolf = true;
 }
 

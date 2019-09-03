@@ -2,6 +2,7 @@
 #define SPELL_CASTER_HPP
 
 #include "../unit/Unit.hpp"
+#include "../unit/Demon.hpp"
 #include "../ability/DefaultAbility.hpp"
 #include "../ability/MagicAbility.hpp"
 #include "../state/MagicState.hpp"
@@ -27,8 +28,10 @@ class SpellCaster : public Unit {
         void changeSpell(Spells newSpell);
         virtual void cast(Unit* enemy);
 
-        virtual int getCounter() const;
         //needed for Warlock
+        virtual int getCounter() const;
+
+        virtual Demon* summonDemon();
 
         virtual void showMyself();
 };

@@ -9,6 +9,10 @@ MagicAbility::~MagicAbility() {
     delete(this->spell);
 }
 
+int MagicAbility::getCounter() const {
+    return 0;
+}
+
 void MagicAbility::changeSpell(Spells newSpell) {
     delete(this->spell);
     this->spell = SpellBook::getSpellBook()->getSpell(newSpell);
@@ -19,3 +23,5 @@ void MagicAbility::cast(Unit* enemy) {
     this->owner->spendMana(this->spell->getCost());
     this->spell->action(enemy, 1);
 }
+
+Demon* MagicAbility::summonDemon() {}
