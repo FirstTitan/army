@@ -7,6 +7,8 @@ NecromancerAbility::~NecromancerAbility() {};
 
 void NecromancerAbility::cast(Unit* enemy) {
     this->owner->ensureIsAlive();
+    enemy->addObserver((Necromancer*)this->owner);
+
     this->owner->spendMana(this->spell->getCost());
 
     if ( this->spell->isCombat() ) {

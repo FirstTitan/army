@@ -13,11 +13,6 @@ void Necromancer::attack(Unit* enemy) {
     enemy->addObserver(this);
 }
 
-void Necromancer::cast(Unit* enemy) {
-    this->magicAbility->cast(enemy);
-    enemy->addObserver(this);
-}
-
 void Necromancer::update(Observable* obs, StateObserver state) {
     this->addHitPoints(((Unit*)(obs))->getHitPointsLimit()/10);
     obs->removeObserver(this);

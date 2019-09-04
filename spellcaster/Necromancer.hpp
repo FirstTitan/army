@@ -11,7 +11,6 @@ class Necromancer : public SpellCaster, public Observer {
         virtual ~Necromancer();
 
         virtual void attack(Unit* enemy);
-        virtual void cast(Unit* enemy);
 
         virtual void update(Observable* obs, StateObserver state);
 };

@@ -2,6 +2,7 @@
 #define NECROMANCER_ABILITY_HPP
 
 #include "MagicAbility.hpp"
+#include "../spellcaster/Necromancer.hpp"
 
 class NecromancerAbility : public MagicAbility {
     public:

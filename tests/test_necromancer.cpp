@@ -3,6 +3,7 @@
 
 #include "../spellcaster/Necromancer.hpp"
 #include "../unit/Soldier.hpp"
+#include "../unit/Vampire.hpp"
 
 TEST_CASE( "Tests for Necromancer class" ) {
     Necromancer* nec = new Necromancer("Necromancer", 150, 12, 150);
@@ -134,5 +135,33 @@ TEST_CASE( "Tests for Necromancer class" ) {
             REQUIRE( nec->getMana() == 0 );
             REQUIRE( soldier->getHitPoints() == 105 );
         }
+    }
+
+    SECTION( "Necromancer::attack like Vampire" ) {
+        Vampire* vampire = new Vampire("Vampire", 200, 40);
+        Soldier* soldier = new Soldier("Soldier", 200, 20);
+
+        REQUIRE( vampire->getTitle() == "Vampire" );
+        REQUIRE( vampire->getHitPoints() == 200 );
+        REQUIRE( vampire->getHitPointsLimit() == 200 );
+        REQUIRE( vampire->getDamage() == 40 );
+
+        vampire->turn(nec);
+
+        REQUIRE( (std::string)nec->getTitle() == "Vampire" );
+        REQUIRE( nec->getHitPoints() == 200 );
+        REQUIRE( nec->getHitPointsLimit() == 200 );
+        REQUIRE( nec->getDamage() == 30 );
+
+        soldier->attack(nec);
+        soldier->attack(nec);
+
+        REQUIRE( soldier->getHitPoints() == 170 );
+        REQUIRE( nec->getHitPoints() == 174 );
+
+        nec->attack(vampire);
+
+        REQUIRE( nec->getHitPoints() == 169 );
+        REQUIRE( vampire->getHitPoints() == 180 );
     }
 }
