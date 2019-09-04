@@ -5,5 +5,4 @@ Werewolf::Werewolf(const char* title, int hitPoints, int damage)
         this->ability = new WerewolfAbility(this);
         this->werewolf = true;
 }
-
 Werewolf::~Werewolf() {};

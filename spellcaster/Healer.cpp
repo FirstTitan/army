@@ -5,5 +5,4 @@ Healer::Healer(const char* title, int hitPoints, int damage, int mana)
         this->magicAbility = new HealerAbility(this, heal);
 
 }
-
 Healer::~Healer() {};
